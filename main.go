@@ -21,6 +21,8 @@ func main() {
 	http.HandleFunc("/forgot-password", handlers.ForgotPasswordHandler)
 	http.HandleFunc("/reset-password", handlers.ResetPasswordHandler)
 	http.HandleFunc(("/login-client"), handlers.LoginClientPage)
+	http.HandleFunc("/register-client", handlers.RegisterClientPage)
+	http.HandleFunc(("/forgot-password-client"), handlers.ForgotPasswordClientPage)
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		ws.ServeWS(server, w, r)
 	})
