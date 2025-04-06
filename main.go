@@ -20,9 +20,10 @@ func main() {
 	http.HandleFunc("/update-password", handlers.UpdatePasswordHandler)
 	http.HandleFunc("/forgot-password", handlers.ForgotPasswordHandler)
 	http.HandleFunc("/reset-password", handlers.ResetPasswordHandler)
-	http.HandleFunc(("/login-client"), handlers.LoginClientPage)
+	http.HandleFunc("/login-client", handlers.LoginClientPage)
 	http.HandleFunc("/register-client", handlers.RegisterClientPage)
-	http.HandleFunc(("/forgot-password-client"), handlers.ForgotPasswordClientPage)
+	http.HandleFunc("/forgot-password-client", handlers.ForgotPasswordClientPage)
+	http.HandleFunc("/reset-password-client", handlers.ResetPasswordClientPage)
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		ws.ServeWS(server, w, r)
 	})
